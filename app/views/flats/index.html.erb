@@ -1,0 +1,26 @@
+<div class="container">
+    <h1>Flats</h1>
+    <p><%= link_to 'Add Flat', new_flat_path %></p>
+  <div class="cards">
+  <% @flats.each do |flat| %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
+    <div class="card-trip">
+  <img src="https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1681427074/vt4afrrpzjsk4b8tlb8r.jpg" />
+  <div >
+
+      <h2><%=flat.name%></h2>
+      <p><%=flat.address%></p>
+    <div class="card-trip-infos">
+    <i class="fa-solid fa-users"> <%= flat.number_of_guests%></i>
+    <i class="fa-solid fa-euro-sign"> <%= flat.price_per_night%></i>
+    </div>
+    <div class="more-info">
+    <%= link_to "More info", flat_path(flat)%>
+    </div>
+  </div>
+</div>
+
+    </div>
+  <% end %>
+  </div>
+</div>

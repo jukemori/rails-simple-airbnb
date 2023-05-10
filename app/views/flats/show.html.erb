@@ -1,0 +1,22 @@
+<div class="container">
+  <h1><%= @flat.name %></h1>
+  <h4>Address:</h4>
+  <p><%= @flat.address %></p>
+  <h4>Description:</h4>
+  <p><%=@flat.description%></p>
+
+
+<p class="btn btn-flat">
+    <%= link_to 'Delete', flat_path(@flat), data: { turbo_method: :delete, turbo_confirm: "Delete #{@flat.name}?" } %>
+  </p>
+  <p class="btn btn-flat">
+    <%= link_to 'Edit', edit_flat_path %>
+  </p>
+
+  <p>
+    <%= link_to 'flats', flats_path %>
+  </p>
+
+
+
+</div>

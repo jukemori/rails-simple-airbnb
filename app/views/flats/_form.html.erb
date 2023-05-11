@@ -1,12 +1,8 @@
-<% if @article.errors.any? %>
-  <% @article.errors.full_messages.each do |message| %>
-    <p class='text-danger'><%= message %></p>
-  <% end %>
-<% end %>
-<%= form_with model: @article do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <%= f.label :content %>
-  <%= f.text_field :content %>
-  <%= f.submit %>
+<%= simple_form_for(flat) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :address %>
+  <%= f.input :description %>
+  <%= f.input :price_per_night %>
+  <%= f.input :number_of_guests %>
+  <%= f.submit class: "btn btn-primary" %>
 <% end %>
